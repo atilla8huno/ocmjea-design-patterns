@@ -7,7 +7,12 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.io.TempDir
 
 /**
- * Covers Kotlin File byte helpers and copyTo, which replace raw stream copy loops.
+ * Kotlin File byte helpers
+ *
+ * writeBytes / readBytes and copyTo replace a FileInputStream copy loop.
+ * copyTo can overwrite; it returns the number of bytes copied.
+ *
+ * This test writes a byte array, reads it back and copies the file.
  */
 class KotlinBinaryIoTest {
     @Test

@@ -5,7 +5,13 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Demonstrates the Java 21 records feature with JUnit 5.
+ * Records
+ *
+ * A compact immutable value type. The compiler generates the constructor,
+ * accessors, equals, hashCode and toString from the components. Add methods
+ * (here introduction()) when the type needs behaviour.
+ *
+ * This test checks the greeting and that two Person("Ana", 30) values are equal.
  */
 public class RecordsTest {
 

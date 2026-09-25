@@ -13,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
  * Problem: collect work from several producer threads without locking the queue.
  *
  * ConcurrentLinkedQueue fits because offer and poll are lock-free FIFO operations.
+ * It does not block; use a blocking queue when the consumer must wait.
  */
 class ConcurrentLinkedQueueTest {
     @Test
@@ -29,7 +30,7 @@ class ConcurrentLinkedQueueTest {
             producers[start].start();
         }
         for (Thread producer : producers) {
-            producer.join();
+            producer.join(); // wait for this producer before draining
         }
 
         Set<Integer> drained = new HashSet<>();

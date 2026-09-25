@@ -4,7 +4,16 @@ import org.junit.jupiter.api.Assertions.assertDoesNotThrow
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-/** Covers ISP by keeping work and feeding on separate interfaces. */
+/**
+ * Interface Segregation
+ *
+ * Clients should not depend on methods they do not use. A single fat
+ * Worker interface would force Robot to implement eat(). Split Workable
+ * and Feedable so each type takes only what it needs.
+ *
+ * Human implements both; Robot only works. This test drives them through
+ * those interfaces.
+ */
 class WorkerTest {
     @Test
     fun `human works and eats while robot only works`() {

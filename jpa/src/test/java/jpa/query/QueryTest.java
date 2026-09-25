@@ -6,7 +6,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Compares identity lookup, ad-hoc JPQL and a reusable named query.
+ * Queries
+ *
+ * Three ways to load: find() by primary key, an ad-hoc JPQL createQuery,
+ * and a @NamedQuery reused by name. JPQL works with entities, not tables.
+ *
+ * This test loads the same row those three ways.
  */
 class QueryTest {
     @Test

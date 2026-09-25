@@ -3,7 +3,16 @@ package designpatterns.behavioral.interpreter
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
-/** Covers Interpreter by evaluating terminal, or, and and expressions. */
+/**
+ * Interpreter (Behavioural)
+ *
+ * Represent a small grammar as an object tree and evaluate it. Terminal
+ * expressions match a literal; And and Or combine them. The client builds
+ * the tree and calls interpret() on the root.
+ *
+ * Applicable for simple rules, not a full language. This test checks who is
+ * a man, a married woman, or John/Julie.
+ */
 class ExpressionTest {
     @Test
     fun `interprets male and married woman expressions`() {

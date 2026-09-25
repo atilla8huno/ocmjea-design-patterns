@@ -13,7 +13,8 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
  * Problem: find the first prime above a threshold in a potentially endless range.
  *
  * Stream fits because elements flow through the pipeline one at a time, so the search stops at the
- * first match instead of materialising intermediate collections.
+ * first match instead of materialising intermediate collections. iterate /
+ * generate plus findFirst is the usual "first that matches" search.
  */
 class SequenceTest {
     private boolean isPrime(int value) {

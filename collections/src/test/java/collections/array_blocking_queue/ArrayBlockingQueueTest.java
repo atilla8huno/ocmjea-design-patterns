@@ -14,7 +14,8 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
  * Problem: hand work from a producer thread to a consumer thread through a small fixed buffer.
  *
  * ArrayBlockingQueue fits because its bounded capacity applies backpressure to a fast producer while
- * take parks the consumer until an item is available.
+ * take parks the consumer until an item is available. Use it for a fixed-size
+ * hand-off between threads (classic producer/consumer).
  */
 class ArrayBlockingQueueTest {
     @Test
@@ -25,7 +26,7 @@ class ArrayBlockingQueueTest {
         Thread producer = new Thread(() -> {
             try {
                 for (int value = 1; value <= 10; value++) {
-                    queue.put(value);
+                    queue.put(value); // blocks while the buffer is full
                 }
             } catch (InterruptedException exception) {
                 Thread.currentThread().interrupt();
@@ -34,7 +35,7 @@ class ArrayBlockingQueueTest {
         Thread consumer = new Thread(() -> {
             try {
                 for (int i = 0; i < 10; i++) {
-                    consumed.add(queue.take());
+                    consumed.add(queue.take()); // blocks while the buffer is empty
                 }
             } catch (InterruptedException exception) {
                 Thread.currentThread().interrupt();
@@ -42,7 +43,7 @@ class ArrayBlockingQueueTest {
         });
         producer.start();
         consumer.start();
-        producer.join();
+        producer.join(); // wait until the other thread has finished
         consumer.join();
 
         assertEquals(List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10), consumed);
@@ -54,7 +55,7 @@ class ArrayBlockingQueueTest {
         ArrayBlockingQueue<Integer> queue = new ArrayBlockingQueue<>(1);
         queue.put(1);
 
-        assertFalse(queue.offer(2, 10, TimeUnit.MILLISECONDS));
+        assertFalse(queue.offer(2, 10, TimeUnit.MILLISECONDS)); // times out instead of blocking forever
         assertEquals(1, queue.poll());
     }
 }

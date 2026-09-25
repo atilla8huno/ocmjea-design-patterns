@@ -7,7 +7,13 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.util.List;
 
 /**
- * Demonstrates the Java 21 stream helpers feature with JUnit 5.
+ * Stream.toList()
+ *
+ * Collect a stream to an unmodifiable List in one call. Unlike
+ * collect(Collectors.toList()), the result cannot be mutated. Combined
+ * here with filter and sorted.
+ *
+ * This test keeps the even numbers [2, 4] from [5, 2, 4, 1].
  */
 public class StreamHelpersTest {
 

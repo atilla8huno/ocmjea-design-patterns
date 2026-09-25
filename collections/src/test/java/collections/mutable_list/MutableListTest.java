@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Problem: merge two sorted lists into a single ordered result.
  *
  * ArrayList fits because the output size is unknown upfront: it grows on demand and appends in
- * amortised constant time.
+ * amortised constant time. Two-pointer merge is the usual interview use.
  */
 class MutableListTest {
     private List<Integer> merge(List<Integer> left, List<Integer> right) {

@@ -5,7 +5,13 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Demonstrates the Java 21 strings feature with JUnit 5.
+ * Text blocks
+ *
+ * A multi-line string literal (three quotes) keeps line breaks as written.
+ * formatted() fills placeholders; strip() trims incidental leading and
+ * trailing whitespace from the block.
+ *
+ * This test checks the greeting for Maria.
  */
 public class StringsTest {
 

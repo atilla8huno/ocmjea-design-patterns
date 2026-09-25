@@ -8,7 +8,13 @@ import java.time.Instant;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Covers Duration for elapsed time on the timeline, independent of calendars and time zones.
+ * Duration
+ *
+ * Elapsed time on the timeline (hours, minutes, seconds), independent of
+ * calendars. Period is for years/months/days on the calendar. Prefer
+ * Duration.between(start, end) on Instant.
+ *
+ * This test measures the gap between two instants.
  */
 class DurationTest {
     @Test

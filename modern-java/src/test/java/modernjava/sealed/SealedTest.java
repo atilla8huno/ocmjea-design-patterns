@@ -5,7 +5,13 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 /**
- * Demonstrates the Java 21 sealed feature with JUnit 5.
+ * Sealed types
+ *
+ * Restrict which types may implement an interface. Shape permits only
+ * Circle and Square, so a switch on Shape can be exhaustive and a new
+ * implementer is a compile error until you allow it.
+ *
+ * This test computes area for one Circle and one Square.
  */
 public class SealedTest {
 

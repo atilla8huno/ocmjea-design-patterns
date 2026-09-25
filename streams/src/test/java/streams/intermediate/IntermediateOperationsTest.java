@@ -7,8 +7,13 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 /**
- * Intermediate Stream operation samples showing lazy transformation, filtering,
- * flattening, ordering, deduplication, observation, and slicing.
+ * Intermediate operations
+ *
+ * Lazy steps that return another Stream: map, filter, flatMap, sorted,
+ * distinct, peek, limit, skip. They do not run until a terminal
+ * operation pulls values. peek is for debugging, not business logic.
+ *
+ * This test chains those operators and checks the result.
  */
 class IntermediateOperationsTest {
 

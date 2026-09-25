@@ -4,7 +4,16 @@ import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Test
 
-/** Covers Prototype by cloning EmployeeDAO and mutating independent copies. */
+/**
+ * Prototype (Creational)
+ *
+ * Copy an existing object instead of building it from scratch. The prototype
+ * implements clone so the expensive load runs once; each copy gets its own
+ * data and can be mutated independently.
+ *
+ * Applicable when creating a new instance is costly or shares mutable state.
+ * This test clones EmployeeDAO twice, edits both copies, and checks the original.
+ */
 class EmployeeTest {
     @Test
     fun `clones employee lists without sharing mutations`() {

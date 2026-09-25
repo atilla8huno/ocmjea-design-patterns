@@ -7,7 +7,13 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Demonstrates storing a value object as columns owned by its containing entity.
+ * Embeddable
+ *
+ * A value object stored as columns on the owning table, not as its own
+ * entity. @Embeddable on the type and @Embedded on the field. Address
+ * has no id of its own.
+ *
+ * This test persists a person with an embedded address and reads it back.
  */
 class EmbeddableTest {
     @Test

@@ -12,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
  * Problem: initialise a shared cache once, even when several threads miss the same key together.
  *
  * ConcurrentHashMap fits because computeIfAbsent and merge update a bucket atomically.
+ * Prefer it over a synchronized HashMap when many threads read and write the same keys.
  */
 class ConcurrentHashMapTest {
     @Test
@@ -20,6 +21,7 @@ class ConcurrentHashMapTest {
         AtomicInteger loads = new AtomicInteger();
 
         for (int i = 0; i < 3; i++) {
+            // runs the loader once per key, even if several threads miss together
             cache.computeIfAbsent("user-1", key -> {
                 loads.incrementAndGet();
                 return "value-of-" + key;

@@ -12,7 +12,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Problem: turn a stream of words into the three most frequent ones, ties broken alphabetically.
  *
  * Collection operators fit because grouping, counting and sorting compose into one readable pipeline
- * instead of manual loops and bookkeeping.
+ * instead of manual loops and bookkeeping. groupingBy plus counting is the
+ * usual word-frequency pipeline.
  */
 class OperationsTest {
     @Test
@@ -20,7 +21,7 @@ class OperationsTest {
         List<String> words = List.of("the", "quick", "fox", "the", "lazy", "dog", "the", "fox", "jumps");
 
         List<Map.Entry<String, Long>> ranking = words.stream()
-                .collect(Collectors.groupingBy(word -> word, Collectors.counting()))
+                .collect(Collectors.groupingBy(word -> word, Collectors.counting())) // word -> count
                 .entrySet().stream()
                 .sorted(Map.Entry.<String, Long>comparingByValue().reversed()
                         .thenComparing(Map.Entry::getKey))

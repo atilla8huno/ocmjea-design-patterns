@@ -4,7 +4,16 @@ import org.junit.jupiter.api.Assertions.assertSame
 import org.junit.jupiter.api.Test
 import kotlin.random.Random
 
-/** Covers Flyweight by reusing Circle instances keyed by colour. */
+/**
+ * Flyweight (Structural)
+ *
+ * Share intrinsic state so many logical objects reuse one instance. Colour is
+ * intrinsic and cached in ShapeFactory; position is passed in when drawing.
+ * Same-colour circles are the same object.
+ *
+ * Applicable when a large number of similar objects would otherwise blow memory.
+ * This test draws several circles and checks reuse by colour.
+ */
 class ShapeTest {
     @Test
     fun `reuses circles of the same colour`() {

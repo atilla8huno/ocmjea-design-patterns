@@ -7,7 +7,13 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.util.List;
 
 /**
- * Demonstrates the Java 21 virtual threads feature with JUnit 5.
+ * Virtual threads (Java 21)
+ *
+ * Run one task per item without a platform thread each time.
+ * newVirtualThreadPerTaskExecutor parks cheaply on blocking calls, so
+ * thousands of tasks can wait without exhausting the OS thread pool.
+ *
+ * This test doubles each number on its own virtual thread.
  */
 public class VirtualThreadsTest {
 

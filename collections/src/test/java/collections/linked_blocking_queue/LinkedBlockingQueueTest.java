@@ -14,7 +14,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 /**
  * Problem: stream tasks to a worker thread and shut it down with a poison pill.
  *
- * LinkedBlockingQueue fits because take blocks until work arrives.
+ * LinkedBlockingQueue fits because take blocks until work arrives. Capacity
+ * is optional; a poison pill is the usual way to stop the worker.
  */
 class LinkedBlockingQueueTest {
     private static final String POISON_PILL = "STOP";
@@ -26,7 +27,7 @@ class LinkedBlockingQueueTest {
         Thread worker = new Thread(() -> {
             try {
                 while (true) {
-                    String task = queue.take();
+                    String task = queue.take(); // parks until a task or the poison pill arrives
                     if (POISON_PILL.equals(task)) {
                         break;
                     }
@@ -41,7 +42,7 @@ class LinkedBlockingQueueTest {
         queue.put("b");
         queue.put("c");
         queue.put(POISON_PILL);
-        worker.join();
+        worker.join(); // wait until the worker saw the poison pill
 
         assertEquals(List.of("a", "b", "c"), processed);
         assertTrue(queue.isEmpty());
@@ -53,7 +54,7 @@ class LinkedBlockingQueueTest {
         queue.put(1);
         queue.put(2);
 
-        assertFalse(queue.offer(3, 10, TimeUnit.MILLISECONDS));
+        assertFalse(queue.offer(3, 10, TimeUnit.MILLISECONDS)); // full: offer fails after the timeout
         assertEquals(0, queue.remainingCapacity());
     }
 }

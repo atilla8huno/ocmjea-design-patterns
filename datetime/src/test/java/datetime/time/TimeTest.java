@@ -9,7 +9,13 @@ import java.time.LocalTime;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Covers LocalTime and LocalDateTime for a wall-clock time, with or without a date.
+ * LocalTime and LocalDateTime
+ *
+ * LocalTime is a wall-clock time of day (09:30) with no date. Combine it
+ * with a LocalDate to get LocalDateTime. Neither type knows a time zone;
+ * attach a ZoneId when you need an instant.
+ *
+ * This test combines a date with a time of day.
  */
 class TimeTest {
     @Test

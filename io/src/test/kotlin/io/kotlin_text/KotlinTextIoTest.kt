@@ -6,14 +6,20 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.io.TempDir
 
 /**
- * Covers Kotlin File text helpers that replace buffered readers, writers and charset boilerplate.
+ * Kotlin File text helpers
+ *
+ * writeText, appendText, readText and readLines hide the Writer / Reader
+ * and default to UTF-8. Path.toFile() bridges from java.nio.file.
+ *
+ * This test writes, appends and reads a note, and uses bufferedReader().use
+ * so the reader is closed.
  */
 class KotlinTextIoTest {
     @Test
     fun `reads and writes text without stream boilerplate`(@TempDir temp: Path) {
         val file = temp.resolve("note.txt").toFile()
 
-        file.writeText("hello\n")
+        file.writeText("hello\n") // writes UTF-8, no Writer boilerplate
         file.appendText("world")
 
         assertEquals("hello\nworld", file.readText())

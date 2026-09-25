@@ -11,8 +11,14 @@ import java.util.stream.Collectors;
 import org.junit.jupiter.api.Test;
 
 /**
- * Collector samples showing collection creation, indexing, grouping,
- * partitioning, joining, downstream mapping, and numeric summaries.
+ * Collectors
+ *
+ * Turn a stream into a collection or summary. toList / toSet / toMap
+ * build collections; groupingBy keys by a classifier; partitioningBy
+ * always yields true/false keys; joining concatenates strings;
+ * summarizingInt gives count, min, max, sum, average.
+ *
+ * This test runs those collectors on a short word list.
  */
 class CollectorsTest {
 
@@ -33,10 +39,10 @@ class CollectorsTest {
 
         assertEquals(
                 Map.of(3, List.of("ant", "cat", "dog"), 4, List.of("bear")),
-                words.stream().collect(Collectors.groupingBy(String::length)));
+                words.stream().collect(Collectors.groupingBy(String::length))); // key = classifier
         assertEquals(
                 Map.of(true, List.of("bear"), false, List.of("ant", "cat", "dog")),
-                words.stream().collect(Collectors.partitioningBy(word -> word.length() > 3)));
+                words.stream().collect(Collectors.partitioningBy(word -> word.length() > 3))); // always two keys: true/false
         assertEquals("ant, bear, cat, dog", words.stream().collect(Collectors.joining(", ")));
         assertEquals(
                 Map.of(3, Set.of("ANT", "CAT", "DOG"), 4, Set.of("BEAR")),

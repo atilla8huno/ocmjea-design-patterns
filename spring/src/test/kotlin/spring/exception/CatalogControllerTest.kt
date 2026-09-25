@@ -10,7 +10,15 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 
-/** @ControllerAdvice and @ExceptionHandler for a missing resource. */
+/**
+ * Exception handling
+ *
+ * Keep controllers free of try/catch for expected failures.
+ * @RestControllerAdvice plus @ExceptionHandler map an exception type to
+ * an HTTP status and body, so every missing resource looks the same.
+ *
+ * This test requests a missing catalog id and checks the status and payload.
+ */
 @SpringBootTest(classes = [SampleApplication::class])
 @AutoConfigureMockMvc
 class CatalogControllerTest @Autowired constructor(

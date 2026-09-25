@@ -8,8 +8,13 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.junit.jupiter.api.Test;
 
 /**
- * Optional samples showing how Stream searches compose with fallback values,
- * transformations, nested optional values, and conditional consumption.
+ * Optional
+ *
+ * A value that may be absent, without null. Stream findFirst / findAny
+ * return Optional. orElse / orElseGet supply a fallback; map transforms
+ * a present value; ifPresent runs a side effect only when present.
+ *
+ * This test searches a stream and composes those Optional calls.
  */
 class OptionalTest {
 

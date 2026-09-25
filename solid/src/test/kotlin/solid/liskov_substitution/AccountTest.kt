@@ -3,7 +3,17 @@ package solid.liskov_substitution
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-/** Covers LSP by withdrawing through Account subtypes. */
+/**
+ * Liskov Substitution
+ *
+ * Subtypes must be usable wherever the base type is expected, without
+ * surprising the caller. CurrentAccount and SavingsAccount both honour
+ * withdraw() on Account; neither throws or no-ops in a way the list would
+ * not expect.
+ *
+ * This test withdraws 40 from each account through a List of Account and
+ * checks the balances.
+ */
 class AccountTest {
     @Test
     fun `withdraws from current and savings accounts interchangeably`() {

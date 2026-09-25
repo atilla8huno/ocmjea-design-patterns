@@ -3,7 +3,16 @@ package designpatterns.creational.singleton
 import org.junit.jupiter.api.Assertions.assertSame
 import org.junit.jupiter.api.Test
 
-/** Covers Singleton by resolving UniquePrinter to one shared instance. */
+/**
+ * Singleton (Creational)
+ *
+ * One class is responsible for creating its only instance and for handing that
+ * instance out. Callers never construct it; they resolve UniquePrinter and
+ * always get the same object.
+ *
+ * Applicable when a shared resource must exist exactly once. This test
+ * resolves the printer twice and checks both references are the same.
+ */
 class PrinterTest {
     @Test
     fun `returns the same printer instance`() {

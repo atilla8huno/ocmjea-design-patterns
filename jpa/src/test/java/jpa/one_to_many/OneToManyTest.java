@@ -7,7 +7,13 @@ import java.util.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Demonstrates ownership and navigation of a bidirectional one-to-many association.
+ * One-to-many
+ *
+ * One parent, many children. The many side usually owns the foreign key
+ * (@ManyToOne); the one side is mappedBy that field. Keep both sides in
+ * sync when you add a child.
+ *
+ * This test persists a parent with children and navigates both ways.
  */
 class OneToManyTest {
     @Test

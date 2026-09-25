@@ -12,7 +12,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * Problem: report which ids two feeds share and which belong to only one of them.
  *
  * Set fits because membership is answered in constant time and the union, intersection and
- * difference operators express the comparison directly.
+ * difference operators express the comparison directly. HashSet is enough when
+ * order does not matter.
  */
 class SetTest {
     @Test

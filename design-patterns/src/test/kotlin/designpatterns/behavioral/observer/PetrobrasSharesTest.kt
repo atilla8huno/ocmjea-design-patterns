@@ -3,7 +3,16 @@ package designpatterns.behavioral.observer
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-/** Covers Observer by notifying shareholders when share price changes. */
+/**
+ * Observer (Behavioural)
+ *
+ * One-to-many notification: when the subject changes, all observers are told.
+ * Petrobras is the subject; Shareholder A/B/C register and react to the
+ * share price. The subject does not know the concrete observer classes.
+ *
+ * Applicable when several objects must stay in sync with one source. This
+ * test updates the price and checks each shareholder is notified.
+ */
 class PetrobrasSharesTest {
     @Test
     fun `notifies shareholders as share price changes`() {

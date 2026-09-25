@@ -8,7 +8,13 @@ import java.util.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Exercises portable Criteria API selection, predicates, joins, ordering, aggregation and bulk mutation.
+ * JPA Criteria
+ *
+ * Type-safe queries built in Java instead of JPQL strings. CriteriaBuilder
+ * creates predicates, joins, order, aggregates and bulk update/delete.
+ * Portable across providers.
+ *
+ * This test selects, filters, joins, counts and runs a bulk update.
  */
 class CriteriaTest {
     @Test

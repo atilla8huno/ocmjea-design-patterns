@@ -7,7 +7,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Demonstrates stable textual persistence for an enum-valued entity attribute.
+ * Enumerated attributes
+ *
+ * Persist an enum as a string (@Enumerated(EnumType.STRING)) so renaming
+ * ordinals does not break rows. ORDINAL stores the index and is brittle.
+ *
+ * This test saves a status and checks the column round-trips as text.
  */
 class EnumerationsTest {
     @Test

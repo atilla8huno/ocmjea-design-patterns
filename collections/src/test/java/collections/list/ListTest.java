@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * Problem: expose a read-only catalogue and locate a value in it without scanning every element.
  *
  * List fits because it is an ordered, index-addressable view, so a sorted list supports binary
- * search while callers cannot modify it.
+ * search while callers cannot modify it. List.of is the usual read-only catalogue.
  */
 class ListTest {
     @Test

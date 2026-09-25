@@ -14,7 +14,8 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
  * Problem: keep the three largest values of a stream and always serve the most urgent task first.
  *
  * PriorityQueue fits because the smallest element is always at the head, so a bounded min-heap
- * solves top-k in O(n log k) without sorting the whole input.
+ * solves top-k in O(n log k) without sorting the whole input. The head is
+ * the least element by the comparator, not the insertion order.
  */
 class PriorityQueueTest {
     private List<Integer> topThree(List<Integer> values) {

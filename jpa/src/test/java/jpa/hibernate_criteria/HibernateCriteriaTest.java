@@ -7,7 +7,13 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Exercises Hibernate's criteria builder for typed selection and criteria insert, update and delete mutations.
+ * Hibernate Criteria
+ *
+ * Hibernate's own criteria API (beyond JPA). Typed selection plus
+ * criteria insert, update and delete. Useful when you need a Hibernate
+ * feature that JPA Criteria does not expose (insert).
+ *
+ * This test selects a row and applies those mutations.
  */
 class HibernateCriteriaTest {
     @Test

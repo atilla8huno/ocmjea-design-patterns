@@ -9,7 +9,13 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.io.TempDir
 
 /**
- * Covers classic Java character I/O: Files string helpers and buffered readers/writers.
+ * Classic Java character I/O
+ *
+ * Read and write text through Files (readString / writeString) or a
+ * BufferedReader / BufferedWriter. Always pass a charset (UTF-8) so the
+ * file is not platform-default.
+ *
+ * This test writes a note and reads it back both ways.
  */
 class TextIoTest {
     @Test

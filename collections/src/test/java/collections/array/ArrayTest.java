@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * Problem: reverse a buffer in place without allocating a second collection.
  *
  * Array fits because its size is fixed at creation and elements are swapped by index, which is what
- * two-pointer algorithms need.
+ * two-pointer algorithms need. Use an array when the length is known and fixed.
  */
 class ArrayTest {
     @Test

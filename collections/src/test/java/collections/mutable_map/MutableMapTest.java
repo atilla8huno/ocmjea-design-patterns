@@ -13,7 +13,8 @@ import static org.junit.jupiter.api.Assertions.assertNull;
  * Problem: find the two positions whose values add up to a target, and tally word frequencies.
  *
  * HashMap fits because it doubles as a constant-time index of everything already seen, turning a
- * quadratic scan into a single pass.
+ * quadratic scan into a single pass. Two-sum and frequency counts are the
+ * usual interview uses.
  */
 class MutableMapTest {
     private int[] twoSum(List<Integer> values, int target) {

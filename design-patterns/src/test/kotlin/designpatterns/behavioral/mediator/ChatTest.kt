@@ -3,7 +3,16 @@ package designpatterns.behavioral.mediator
 import org.junit.jupiter.api.Assertions.assertDoesNotThrow
 import org.junit.jupiter.api.Test
 
-/** Covers Mediator by routing chat messages through ChatMediator. */
+/**
+ * Mediator (Behavioural)
+ *
+ * Route communication through one object so colleagues do not hold each other.
+ * Users send to ChatMediator; the mediator delivers to the other users.
+ * Adding a user does not change the existing ones.
+ *
+ * Applicable when many-to-many links would become a mesh. This test sends
+ * a message from one user and delivers it to the others.
+ */
 class ChatTest {
     @Test
     fun `sends messages between users via the mediator`() {

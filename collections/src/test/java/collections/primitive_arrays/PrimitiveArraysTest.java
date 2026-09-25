@@ -9,7 +9,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Problem: answer repeated range-sum queries over a fixed numeric series.
  *
  * int[] fits because it stores unboxed values in contiguous memory, so building the prefix-sum
- * table and querying it costs no allocation per element.
+ * table and querying it costs no allocation per element. Prefix sums turn
+ * each range query into two index reads.
  */
 class PrimitiveArraysTest {
     private int[] prefixSums(int[] values) {

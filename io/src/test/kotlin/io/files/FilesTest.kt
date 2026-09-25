@@ -9,7 +9,13 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.io.TempDir
 
 /**
- * Covers classic java.nio.file Path and Files operations: create, list, move and delete.
+ * java.nio.file Path and Files
+ *
+ * The modern JDK API for the file system. Path is the location; Files
+ * creates directories and files, lists children, moves and deletes.
+ * Files.list returns a Stream and must be closed (use / try-with-resources).
+ *
+ * This test creates a folder, lists it, moves the file and deletes it.
  */
 class FilesTest {
     @Test
@@ -20,6 +26,7 @@ class FilesTest {
 
         assertTrue(Files.exists(draft))
         assertTrue(Files.isDirectory(notes))
+        // Files.list is a Stream and must be closed
         Files.list(notes).use { paths ->
             assertEquals(listOf(draft), paths.toList())
         }

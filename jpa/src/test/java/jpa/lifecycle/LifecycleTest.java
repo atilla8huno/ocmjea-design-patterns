@@ -7,7 +7,13 @@ import java.time.Instant;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Demonstrates entity lifecycle callbacks that initialise and update audit timestamps.
+ * Lifecycle callbacks
+ *
+ * @PrePersist and @PreUpdate run just before insert and update. Use them
+ * for audit timestamps so the application does not set those fields by
+ * hand on every save.
+ *
+ * This test persists, then updates, and checks createdAt / updatedAt.
  */
 class LifecycleTest {
     @Test

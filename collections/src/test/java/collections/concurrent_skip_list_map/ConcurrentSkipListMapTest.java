@@ -13,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Problem: keep a live scoreboard sorted by score and answer range queries without locking the map.
  *
  * ConcurrentSkipListMap fits because keys stay ordered and navigation methods are O(log n).
+ * Use it when you need a concurrent map that is also a SortedMap.
  */
 class ConcurrentSkipListMapTest {
     @Test

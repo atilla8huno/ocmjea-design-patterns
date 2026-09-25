@@ -5,7 +5,13 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Demonstrates the Java 21 factories feature with JUnit 5.
+ * List.of and Map.of
+ *
+ * Factory methods for small unmodifiable collections. No add/put after
+ * creation; nulls are rejected. Prefer them for fixed catalogues instead
+ * of a mutable ArrayList or HashMap.
+ *
+ * This test checks the language list and the Java version entry.
  */
 public class FactoriesTest {
 

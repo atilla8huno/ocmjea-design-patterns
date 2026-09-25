@@ -9,7 +9,13 @@ import java.util.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Demonstrates Hibernate fetch plans using join fetch, entity graphs and batched lazy collections.
+ * Fetch plans
+ *
+ * Three ways to load an association without N+1 or a lazy exception:
+ * join fetch in JPQL (one query, watch cartesian products — use distinct),
+ * an entity graph on find, and @BatchSize so lazy loads group ids.
+ *
+ * This test checks each plan initialises the articles collection.
  */
 class HibernateFetchTest {
     @Test
@@ -21,7 +27,7 @@ class HibernateFetchTest {
                 em.persist(author);
             });
             try (var em = support.em()) {
-                Author joined = em.createQuery("select distinct a from Author a join fetch a.articles", Author.class).getSingleResult();
+                Author joined = em.createQuery("select distinct a from Author a join fetch a.articles", Author.class).getSingleResult(); // one query, posts inlined
                 assertTrue(Hibernate.isInitialized(joined.articles));
 
                 EntityGraph<Author> graph = em.createEntityGraph(Author.class);

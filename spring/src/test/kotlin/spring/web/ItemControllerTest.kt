@@ -14,7 +14,16 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 
-/** MVC mappings, path/query/header parameters and request bodies. */
+/**
+ * Spring MVC
+ *
+ * A @RestController maps HTTP methods to handler methods. Path variables,
+ * query parameters, headers and the request body are bound by annotations
+ * (@PathVariable, @RequestParam, @RequestHeader, @RequestBody).
+ *
+ * This test hits each ItemController endpoint through MockMvc and checks
+ * the status and payload.
+ */
 @SpringBootTest(classes = [SampleApplication::class])
 @AutoConfigureMockMvc
 class ItemControllerTest @Autowired constructor(

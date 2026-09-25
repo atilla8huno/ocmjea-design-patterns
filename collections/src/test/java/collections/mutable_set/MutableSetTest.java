@@ -18,7 +18,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * Problem: detect the first id that repeats in a stream.
  *
  * HashSet fits because add stores the value and reports whether it was new in one constant-time
- * call, so no second membership scan is needed.
+ * call, so no second membership scan is needed. First-duplicate in a stream
+ * is the usual interview use.
  */
 class MutableSetTest {
     private Integer firstRepeated(List<Integer> ids) {

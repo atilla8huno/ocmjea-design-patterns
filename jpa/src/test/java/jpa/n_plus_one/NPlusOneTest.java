@@ -7,7 +7,13 @@ import java.util.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Uses Hibernate statistics to contrast an N+1 traversal with a join-fetched query.
+ * N+1 selects
+ *
+ * Loading parents then touching each lazy collection fires one query per
+ * parent (N+1). join fetch loads the association in the same select;
+ * distinct drops the cartesian duplicate parents.
+ *
+ * This test compares prepareStatementCount for both approaches.
  */
 class NPlusOneTest {
     @Test
@@ -26,9 +32,10 @@ class NPlusOneTest {
                 em.createQuery("select b from Blog b", Blog.class).getResultList()
                         .forEach(blog -> blog.posts.size());
             }
-            long bad = statistics.getPrepareStatementCount();
+            long bad = statistics.getPrepareStatementCount(); // 1 select + 1 per blog
             statistics.clear();
             try (var em = support.em()) {
+                // join fetch loads posts in one query; distinct drops cartesian duplicates
                 em.createQuery("select distinct b from Blog b join fetch b.posts", Blog.class).getResultList()
                         .forEach(blog -> blog.posts.size());
             }

@@ -3,7 +3,16 @@ package designpatterns.behavioral.iterator
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-/** Covers Iterator by walking NameDAO without exposing storage. */
+/**
+ * Iterator (Behavioural)
+ *
+ * Walk a collection without exposing its storage. NameDAO is a Container;
+ * CollectionIterator offers hasNext and next so the client never sees the
+ * array or list inside.
+ *
+ * Applicable whenever traversal should stay independent of the data structure.
+ * This test prints each name through that iterator.
+ */
 class IteratorTest {
     @Test
     fun `iterates names in insertion order`() {

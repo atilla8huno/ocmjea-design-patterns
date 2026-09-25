@@ -12,7 +12,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Problem: keep the first occurrence of each visitor, in arrival order.
  *
  * LinkedHashSet fits because it rejects duplicates in constant time while preserving insertion
- * order, which a plain HashSet does not guarantee.
+ * order, which a plain HashSet does not guarantee. Use it when uniqueness
+ * and first-seen order both matter.
  */
 class LinkedSetTest {
     @Test

@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Problem: list the booking slots inside a time window and find the nearest slot around a moment.
  *
  * TreeSet fits because it keeps elements sorted and answers range, ceiling and floor queries in
- * logarithmic time.
+ * logarithmic time. Use it when you need "nearest" or a range, not just membership.
  */
 class SortedSetTest {
     private final TreeSet<Integer> slots = new TreeSet<>(List.of(9, 11, 13, 15, 17));

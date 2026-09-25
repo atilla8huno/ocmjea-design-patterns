@@ -6,7 +6,13 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Contrasts materialising every entity to obtain a size with a database count projection.
+ * Counting
+ *
+ * findAll().size() loads every row to count them. select count(e) runs
+ * COUNT in the database and returns a number. Use the latter on large
+ * tables.
+ *
+ * This test compares both approaches on the same data.
  */
 class CountingTest {
     @Test

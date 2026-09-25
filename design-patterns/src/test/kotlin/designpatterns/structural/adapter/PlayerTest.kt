@@ -3,7 +3,16 @@ package designpatterns.structural.adapter
 import org.junit.jupiter.api.Assertions.assertDoesNotThrow
 import org.junit.jupiter.api.Test
 
-/** Covers Adapter by playing mixed media types through AudioPlayer. */
+/**
+ * Adapter (Structural)
+ *
+ * A bridge between two incompatible interfaces. AudioPlayer only plays mp3;
+ * MediaAdapter wraps the mp4 and flv players so the same play() call works
+ * for all three. The client never talks to the extra players directly.
+ *
+ * Applicable when you cannot change an existing API but must use another one.
+ * This test plays mp3, mp4 and flv through AudioPlayer.
+ */
 class PlayerTest {
     @Test
     fun `plays supported formats and reports unsupported files`() {

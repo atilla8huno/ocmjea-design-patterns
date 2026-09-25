@@ -11,7 +11,13 @@ import java.time.ZonedDateTime;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Covers ZoneId, ZonedDateTime and OffsetDateTime for the same instant in different zones.
+ * Zones and offsets
+ *
+ * The same instant looks like a different local time in London and São Paulo.
+ * ZonedDateTime carries a ZoneId (rules, DST); OffsetDateTime carries a
+ * fixed ZoneOffset. Convert with withZoneSameInstant.
+ *
+ * This test checks one instant in two zones.
  */
 class TimezoneTest {
     @Test

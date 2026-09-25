@@ -10,7 +10,15 @@ import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 
-/** Jakarta validation on a request body. */
+/**
+ * Bean Validation
+ *
+ * Declare constraints on the request type (@NotBlank, @Email, and so on).
+ * @Valid on the controller argument runs them; a failure becomes 400
+ * without hand-written checks in the handler.
+ *
+ * This test posts invalid signup input and checks the 400 response.
+ */
 @SpringBootTest(classes = [SampleApplication::class])
 @AutoConfigureMockMvc
 class SignupControllerTest @Autowired constructor(

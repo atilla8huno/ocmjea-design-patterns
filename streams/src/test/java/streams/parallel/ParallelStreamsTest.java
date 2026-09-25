@@ -9,8 +9,13 @@ import java.util.stream.Collectors;
 import org.junit.jupiter.api.Test;
 
 /**
- * Parallel Stream samples comparing parallel and sequential results while
- * avoiding assumptions about encounter order for unordered selection.
+ * Parallel streams
+ *
+ * parallelStream() splits the work across the common ForkJoinPool.
+ * Contents should match a sequential stream if the operators are
+ * associative. findAny does not promise encounter order.
+ *
+ * This test compares sequential and parallel doubles and uses findAny.
  */
 class ParallelStreamsTest {
 
@@ -27,7 +32,7 @@ class ParallelStreamsTest {
     @Test
     void treatsParallelFindAnyAsUnordered() {
         var values = Set.of(1, 2, 3, 4);
-        int selected = values.parallelStream().findAny().orElseThrow();
+        int selected = values.parallelStream().findAny().orElseThrow(); // any match; not encounter order
 
         assertTrue(values.contains(selected));
     }

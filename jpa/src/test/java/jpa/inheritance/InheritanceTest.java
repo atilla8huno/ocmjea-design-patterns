@@ -6,7 +6,13 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Demonstrates single-table inheritance with a discriminator for concrete payment types.
+ * Inheritance
+ *
+ * Map a type hierarchy to the database. SINGLE_TABLE stores every subclass
+ * in one table with a discriminator column. Fast reads; nullable columns
+ * for subclass fields.
+ *
+ * This test persists two payment subtypes and queries them as the base type.
  */
 class InheritanceTest {
     @Test

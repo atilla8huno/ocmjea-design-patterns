@@ -7,7 +7,13 @@ import java.util.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Demonstrates a many-to-many association represented by a PostgreSQL join table.
+ * Many-to-many
+ *
+ * Both sides can hold many of the other. JPA uses a join table
+ * (@JoinTable). Pick one owning side; the other is mappedBy. Avoid
+ * cascading ALL on both ends.
+ *
+ * This test links authors and articles through that join table.
  */
 class ManyToManyTest {
     @Test

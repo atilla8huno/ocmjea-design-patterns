@@ -13,7 +13,8 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 /**
  * Problem: notify every registered listener even if another thread adds one during the broadcast.
  *
- * CopyOnWriteArrayList fits because each iterator is a snapshot.
+ * CopyOnWriteArrayList fits because each iterator is a snapshot. Cheap reads,
+ * expensive writes — typical for a listener list.
  */
 class CopyOnWriteArrayListTest {
     @Test

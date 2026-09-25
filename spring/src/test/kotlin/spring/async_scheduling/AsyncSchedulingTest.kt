@@ -7,7 +7,15 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import spring.application.SampleApplication
 
-/** @Async returns a future and @Scheduled increments a counter. */
+/**
+ * @Async and @Scheduled
+ *
+ * Run work off the caller thread, or on a timer. @Async submits the method
+ * to a pool and can return a Future. @Scheduled repeats a method (fixed
+ * rate or cron). Enable them with @EnableAsync and @EnableScheduling.
+ *
+ * This test awaits the async result and waits until the scheduled count moves.
+ */
 @SpringBootTest(classes = [SampleApplication::class])
 class AsyncSchedulingTest @Autowired constructor(
     private val worker: AsyncWorker,

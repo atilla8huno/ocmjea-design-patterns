@@ -7,7 +7,13 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.util.stream.IntStream;
 
 /**
- * Demonstrates Java concurrency with thread safe and JUnit 5.
+ * CopyOnWriteArrayList
+ *
+ * Several threads add to a list without ConcurrentModificationException.
+ * CopyOnWriteArrayList copies the array on each write, so readers always
+ * see a stable snapshot. Writes are more expensive; reads are cheap.
+ *
+ * This test adds three items in parallel and checks the sorted contents.
  */
 public class ThreadSafeTest {
 

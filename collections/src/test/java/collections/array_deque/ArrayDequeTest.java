@@ -18,7 +18,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * Problem: count the fewest hops between two nodes of a graph, and check a word from both ends.
  *
  * ArrayDeque fits because breadth-first search needs amortised constant-time removal from the front
- * while a palindrome check consumes both ends of the same buffer.
+ * while a palindrome check consumes both ends of the same buffer. Prefer it
+ * over Stack and LinkedList for a deque.
  */
 class ArrayDequeTest {
     private static final Map<String, List<String>> ROUTES = Map.of(

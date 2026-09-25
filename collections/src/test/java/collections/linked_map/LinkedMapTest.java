@@ -13,7 +13,8 @@ import static org.junit.jupiter.api.Assertions.assertNull;
  * Problem: cache a bounded number of entries and evict the least recently used one when it is full.
  *
  * LinkedHashMap fits because access-order mode plus removeEldestEntry implements an LRU policy
- * with constant-time lookups and a predictable iteration order.
+ * with constant-time lookups and a predictable iteration order. A common
+ * interview LRU cache is this plus a capacity check in removeEldestEntry.
  */
 class LinkedMapTest {
     private static final class LruCache<K, V> extends LinkedHashMap<K, V> {

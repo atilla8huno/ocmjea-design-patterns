@@ -9,7 +9,13 @@ import java.time.Period;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Covers LocalDate for calendar dates without a time of day: parse, arithmetic and Period.
+ * LocalDate
+ *
+ * A calendar date with no time of day and no zone (2026-09-25). Parse it,
+ * add weeks or months, and measure a Period between two dates. Use
+ * LocalDateTime when you also need the clock time.
+ *
+ * This test parses a date, shifts it and checks the Period.
  */
 class DateTest {
     @Test

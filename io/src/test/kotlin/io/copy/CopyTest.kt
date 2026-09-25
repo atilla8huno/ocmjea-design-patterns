@@ -8,7 +8,13 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.io.TempDir
 
 /**
- * Covers classic Java copy paths: Files.copy and InputStream.transferTo.
+ * Copying files and streams
+ *
+ * Files.copy copies Path to Path (with REPLACE_EXISTING when needed).
+ * InputStream.transferTo writes the whole stream to an OutputStream —
+ * useful when you already have the streams open.
+ *
+ * This test copies a file both ways and checks the destination text.
  */
 class CopyTest {
     @Test

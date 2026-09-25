@@ -13,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
  * Problem: release scheduled jobs only after their delay has elapsed, earliest first.
  *
  * DelayQueue fits because poll returns an item only when getDelay is zero or negative.
+ * Elements must implement Delayed; take() waits until the earliest is due.
  */
 class DelayQueueTest {
     private record Job(String name, long delayNanos) implements Delayed {

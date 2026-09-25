@@ -5,7 +5,13 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Demonstrates Java 14+ switch expressions with arrow cases and yield.
+ * Switch expressions
+ *
+ * switch can yield a value instead of falling through statements. Arrow
+ * cases are exhaustive and do not fall through; yield is used in a
+ * block case. No mutable result variable.
+ *
+ * This test classifies weekday / weekend / unknown and picks work hours.
  */
 public class SwitchExpressionsTest {
 

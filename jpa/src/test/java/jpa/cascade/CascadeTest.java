@@ -7,7 +7,13 @@ import java.util.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Demonstrates cascading persistence and orphan removal for an aggregate's children.
+ * Cascade and orphan removal
+ *
+ * CascadeType.PERSIST / ALL saves children when you persist the parent.
+ * orphanRemoval = true deletes a child that you remove from the
+ * collection. That models an aggregate, not a shared reference.
+ *
+ * This test persists a parent with children and then orphans one.
  */
 class CascadeTest {
     @Test

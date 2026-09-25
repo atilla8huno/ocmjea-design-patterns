@@ -4,7 +4,16 @@ import org.junit.jupiter.api.Assertions.assertDoesNotThrow
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-/** Covers SRP by keeping invoice data separate from persistence and printing. */
+/**
+ * Single Responsibility
+ *
+ * A class should have one reason to change. Invoice data, persistence and
+ * printing would otherwise live together; a change to any of those jobs
+ * would touch the same type.
+ *
+ * Invoice holds number and amount, InvoiceRepository saves, InvoicePrinter
+ * prints. This test uses each type for one job.
+ */
 class InvoiceTest {
     @Test
     fun `saves and prints an invoice`() {

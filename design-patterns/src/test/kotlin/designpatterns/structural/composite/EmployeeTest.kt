@@ -3,7 +3,16 @@ package designpatterns.structural.composite
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-/** Covers Composite by treating managers and staff as a tree of Employee. */
+/**
+ * Composite (Structural)
+ *
+ * Treat a leaf and a group through the same type. Employee can stand alone or
+ * hold subordinates, so a manager and a staff member share one interface.
+ * Walking the tree does not care which is which.
+ *
+ * Applicable for part-whole hierarchies (org charts, menus, file trees).
+ * This test builds a small org chart and walks it.
+ */
 class EmployeeTest {
     @Test
     fun `builds a company hierarchy of employees`() {

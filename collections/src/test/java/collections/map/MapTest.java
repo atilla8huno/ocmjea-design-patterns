@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
  * Problem: convert a Roman numeral to a number using a fixed symbol table.
  *
  * Map fits because the read-only table gives constant-time lookups for every symbol and cannot be
- * modified while the conversion runs.
+ * modified while the conversion runs. Map.of is the usual way to build that table.
  */
 class MapTest {
     private static final Map<Character, Integer> SYMBOLS = Map.of(

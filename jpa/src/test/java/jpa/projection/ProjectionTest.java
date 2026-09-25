@@ -6,7 +6,13 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Contrasts loading a complete entity for one field with a direct scalar projection.
+ * Projections
+ *
+ * If you only need one field, do not load the whole entity. A JPQL
+ * constructor or scalar select (select e.name) returns just that column
+ * and skips the rest of the row.
+ *
+ * This test compares findAll-plus-getName with a name projection.
  */
 class ProjectionTest {
     @Test

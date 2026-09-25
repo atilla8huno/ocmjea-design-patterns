@@ -3,7 +3,16 @@ package designpatterns.behavioral.memento
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-/** Covers Memento by restoring a Person name from saved states. */
+/**
+ * Memento (Behavioural)
+ *
+ * Capture and restore an object's state without exposing its internals.
+ * Person writes a PersonMemento; PersonStates keeps the history. Undo
+ * restores an earlier snapshot.
+ *
+ * Applicable for undo, checkpoints or draft versions. This test saves two
+ * names, then restores the earlier one.
+ */
 class PersonTest {
     @Test
     fun `restores previously saved person names`() {

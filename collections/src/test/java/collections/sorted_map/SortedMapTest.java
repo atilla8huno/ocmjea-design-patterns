@@ -13,7 +13,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * Problem: pick the discount tier that applies to an order size and list the tiers in a range.
  *
  * TreeMap fits because floorEntry finds the greatest key not above a value in logarithmic time and
- * subMap exposes an ordered range view.
+ * subMap exposes an ordered range view. floorEntry is the usual "best tier
+ * not above this amount" lookup.
  */
 class SortedMapTest {
     private final TreeMap<Integer, Integer> discountByMinimumItems = new TreeMap<>(Map.of(0, 0, 10, 5, 50, 10, 100, 20));

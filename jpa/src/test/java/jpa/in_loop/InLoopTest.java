@@ -7,7 +7,13 @@ import java.util.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * Uses Hibernate statistics to contrast repeated lookup and insert loops with bulk lookup and JDBC batching.
+ * Queries in a loop
+ *
+ * find() or persist() inside a for-loop is N round-trips. Prefer one
+ * IN query (or join fetch) for reads, and JDBC batching for inserts.
+ * Hibernate statistics show the statement count.
+ *
+ * This test contrasts the loop with a bulk find and a batched insert.
  */
 class InLoopTest {
     @Test

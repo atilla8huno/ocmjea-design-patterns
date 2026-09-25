@@ -5,7 +5,13 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Demonstrates the Java 21 pattern matching feature with JUnit 5.
+ * Pattern matching for instanceof
+ *
+ * Test the type and bind the narrowed variable in one check
+ * (value instanceof String text). No separate cast. The binding is in
+ * scope only when the test succeeds.
+ *
+ * This test formats a String to upper case and an Integer with a prefix.
  */
 public class PatternMatchingTest {
 

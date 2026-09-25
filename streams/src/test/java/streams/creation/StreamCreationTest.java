@@ -9,8 +9,14 @@ import java.util.stream.Stream;
 import org.junit.jupiter.api.Test;
 
 /**
- * Java Stream creation samples showing factories, collections, arrays, generated
- * values, iterated values, and the empty stream.
+ * Creating streams
+ *
+ * A Stream is a pipeline, not a collection. Build one from a collection
+ * (stream()), an array (Arrays.stream), factories (of, empty), or
+ * generate / iterate for lazy sequences. Nothing runs until a terminal
+ * operation.
+ *
+ * This test builds streams those ways and checks a few values.
  */
 class StreamCreationTest {
 

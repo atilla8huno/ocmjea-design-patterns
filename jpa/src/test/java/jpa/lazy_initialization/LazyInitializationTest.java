@@ -11,8 +11,14 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Shows Hibernate's LazyInitializationException after the persistence context is closed.
- * The cart is loaded, the session ends, and then the lazy items collection is touched while detached.
+ * LazyInitializationException
+ *
+ * A lazy collection is a proxy. After the persistence context closes, the
+ * session is gone; touching the collection throws
+ * LazyInitializationException. Fix it with join fetch, an open session,
+ * or mapping the collection EAGER (rarely).
+ *
+ * This test loads a cart, closes the session, then reads lines.
  */
 class LazyInitializationTest {
     @Test
@@ -30,7 +36,7 @@ class LazyInitializationTest {
                 assertEquals("open", detached.name);
             }
 
-            assertThrows(LazyInitializationException.class, () -> detached.lines.size());
+            assertThrows(LazyInitializationException.class, () -> detached.lines.size()); // session already closed
         }
     }
 

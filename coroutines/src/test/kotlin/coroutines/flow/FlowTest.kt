@@ -5,7 +5,16 @@ import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-/** Covers Flow by collecting a mapped cold sequence. */
+/**
+ * Flow
+ *
+ * A cold asynchronous stream. Nothing runs until someone collects; each
+ * collector starts the upstream again. Operators such as map transform
+ * values as they are emitted.
+ *
+ * A Channel is a live hand-off between coroutines. This test collects
+ * NumberFlow.doubled() into [2, 4, 6].
+ */
 class FlowTest {
     @Test
     fun `collects doubled numbers from a flow`() = runBlocking {

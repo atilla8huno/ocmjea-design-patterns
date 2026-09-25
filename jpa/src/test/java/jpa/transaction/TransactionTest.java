@@ -6,7 +6,13 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Demonstrates the visibility difference between committed and rolled-back transactions.
+ * Transactions
+ *
+ * begin / commit makes writes visible to the next session. rollback
+ * discards them. Without a transaction, persist may not flush as you
+ * expect on some setups.
+ *
+ * This test commits one row and rolls another back, then checks visibility.
  */
 class TransactionTest {
     @Test

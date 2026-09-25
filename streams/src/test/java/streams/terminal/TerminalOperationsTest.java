@@ -9,8 +9,13 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 /**
- * Terminal Stream operation samples showing traversal, aggregation, selection,
- * matching, and immutable result materialisation.
+ * Terminal operations
+ *
+ * The step that consumes the stream: forEach, reduce, collect, findFirst,
+ * findAny, anyMatch / allMatch / noneMatch, count. After this the stream
+ * cannot be reused. toList() materialises an unmodifiable list.
+ *
+ * This test exercises those terminals on a small list of numbers.
  */
 class TerminalOperationsTest {
 

@@ -10,8 +10,13 @@ import java.util.stream.LongStream;
 import org.junit.jupiter.api.Test;
 
 /**
- * Primitive Stream samples showing ranges, specialised numeric operations,
- * boxing, and summary statistics without object-stream arithmetic.
+ * Primitive streams
+ *
+ * IntStream, LongStream and DoubleStream avoid boxing. range / rangeClosed
+ * build sequences; sum, average and summaryStatistics run without
+ * boxed Integer streams. boxed() lifts back to an object stream when needed.
+ *
+ * This test uses ranges and a summary on a few numbers.
  */
 class PrimitiveStreamsTest {
 

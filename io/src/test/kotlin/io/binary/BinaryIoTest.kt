@@ -12,7 +12,13 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.io.TempDir
 
 /**
- * Covers classic Java binary I/O: FileInputStream/FileOutputStream and DataInput/DataOutput.
+ * Classic Java binary I/O
+ *
+ * FileInputStream / FileOutputStream move raw bytes. DataInputStream /
+ * DataOutputStream add typed primitives (writeInt, readUTF) on top of
+ * those streams.
+ *
+ * This test writes a byte array and a few primitives, then reads them back.
  */
 class BinaryIoTest {
     @Test
