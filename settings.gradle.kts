@@ -7,4 +7,19 @@ pluginManagement {
     }
 }
 
-rootProject.name = "spring"
+rootProject.name = "jvm-samples"
+
+include(
+    "design-patterns",
+    "solid",
+    "coroutines",
+    "spring",
+    "io",
+    "concurrency",
+    "modern-java",
+    "streams",
+    "collections",
+    "datetime",
+    "jpa",
+    "functional",
+)

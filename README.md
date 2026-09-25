@@ -1,19 +1,28 @@
 # JVM reference samples
 
-Independent modules for common JVM topics. Each folder is its own project: Java 21, JUnit 5, and a short README.
+Independent modules for common JVM topics. Java 21 or Kotlin, JUnit 5, Gradle.
 
-| Module | Run |
+From the repo root, run every module:
+
+```bash
+./gradlew test
+```
+
+Or open one folder and run `./gradlew test` there.
+
+| Module | Notes |
 | --- | --- |
-| [design-patterns](design-patterns) | `./gradlew test` |
-| [solid](solid) | `./gradlew test` |
-| [coroutines](coroutines) | `./gradlew test` |
-| [spring](spring) | `./gradlew test` |
-| [io](io) | `./gradlew test` |
-| [concurrency](concurrency) | `./gradlew test` |
-| [modern-java](modern-java) | `./gradlew test` |
-| [streams](streams) | `./gradlew test` |
-| [collections](collections) | `./gradlew test` |
-| [datetime](datetime) | `./gradlew test` |
-| [jpa](jpa) | `mvn test` |
+| [design-patterns](design-patterns) | GoF samples |
+| [solid](solid) | SOLID principles |
+| [coroutines](coroutines) | Kotlin coroutines |
+| [spring](spring) | Spring Boot |
+| [io](io) | Java and Kotlin I/O |
+| [concurrency](concurrency) | Threads, executors, atomics |
+| [modern-java](modern-java) | Java 9–21 language features |
+| [streams](streams) | Stream API |
+| [functional](functional) | `java.util.function`, composition, purity |
+| [collections](collections) | Collection types as problems |
+| [datetime](datetime) | `java.time` |
+| [jpa](jpa) | JPA and Hibernate |
 
-Open a module folder and run the command there. Types live in `src/main`, tests in `src/test`.
+Types live in `src/main`, tests in `src/test`.

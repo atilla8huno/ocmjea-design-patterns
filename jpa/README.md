@@ -1,6 +1,6 @@
 # JPA
 
-JPA and Hibernate against Zonky embedded PostgreSQL. Run `mvn test`.
+JPA and Hibernate against Zonky embedded PostgreSQL. Run `./gradlew test`.
 
 ## Mappings
 
