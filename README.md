@@ -1,28 +1,19 @@
-# ocmjea-design-patterns
-Design Patterns cobrados no exame para a certificação OCM Java EE Enterprise Architect (GoF e Java EE Patterns)
+# JVM reference samples
 
-Para iniciantes em padrões de projeto, a lista abaixo (em ordem) o auxiliará em seus estudos:
+Independent modules for common JVM topics. Each folder is its own project: Java 21, JUnit 5, and a short README.
 
-1. Factory Method
-2. Strategy
-3. Decorator
-4. Composite
-5. Iterator
-6. Template Method
-7. Abstract Factory
-8. Builder
-9. Singleton
-10. Proxy
-11. Adapter
-12. Bridge
-13. Mediator
-14. Façade
-15. Observer
-16. Chain of Responsibility
-17. Memento
-18. Command
-19. Prototype
-20. State
-21. Visitor
-22. Flyweight
-23. Interpreter
+| Module | Run |
+| --- | --- |
+| [design-patterns](design-patterns) | `./gradlew test` |
+| [solid](solid) | `./gradlew test` |
+| [coroutines](coroutines) | `./gradlew test` |
+| [spring](spring) | `./gradlew test` |
+| [io](io) | `./gradlew test` |
+| [concurrency](concurrency) | `./gradlew test` |
+| [modern-java](modern-java) | `./gradlew test` |
+| [streams](streams) | `./gradlew test` |
+| [collections](collections) | `./gradlew test` |
+| [datetime](datetime) | `./gradlew test` |
+| [jpa](jpa) | `mvn test` |
+
+Open a module folder and run the command there. Types live in `src/main`, tests in `src/test`.
