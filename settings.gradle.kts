@@ -22,4 +22,5 @@ include(
     "datetime",
     "jpa",
     "functional",
+    "algorithms",
 )

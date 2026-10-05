@@ -22,6 +22,7 @@ Or open one folder and run `./gradlew test` there.
 | [streams](streams) | Stream API |
 | [functional](functional) | `java.util.function`, composition, purity |
 | [collections](collections) | Collection types as problems |
+| [algorithms](algorithms) | Graphs, lists, trees, search |
 | [datetime](datetime) | `java.time` |
 | [jpa](jpa) | JPA and Hibernate |
 
