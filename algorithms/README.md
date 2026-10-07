@@ -32,5 +32,6 @@ A `ListNode` (`value`, `next`), not `java.util.LinkedList`.
 
 - **tree** — max depth, invert, level-order BFS.
 - **two_pointers** — sorted two-sum and a unique-character window.
+- **palindrome** — longest palindromic substring by expanding around each centre.
 - **binary_search** — first occurrence and search in a rotated array.
 - **stack** — matching brackets and next greater element.
