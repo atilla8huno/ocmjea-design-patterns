@@ -6,6 +6,7 @@ Small Java drills for graph, list, and other LeetCode-style interviews. Run `./g
 
 - **representation** — adjacency list vs matrix.
 - **bfs** — queue, visited set, fewest hops.
+- **dijkstra** — cheapest path when edges have non-negative weights.
 - **dfs** — recursion and an explicit stack.
 - **cycle** — directed cycle with DFS colours.
 - **topological** — Kahn's order; empty when a cycle remains.
